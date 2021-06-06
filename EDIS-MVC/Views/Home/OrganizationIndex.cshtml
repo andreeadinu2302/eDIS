@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Organization dashboard";
+}
+
+<div class="text-center">
+    <img src="~/logos/@ViewBag.organization.LogoName" class="img-fluid" height="150" width="150" alt="Organization logo">
+    <h1 class="display-4">@ViewBag.organization.Name</h1>
+    <p>Sign diplomas, validate records</p>
+    <div class="row mb-3">
+        <div class="col-xl-4 col-sm-6 py-2">
+            <a asp-action="Create" asp-controller="Documents" style="text-decoration:none">
+                <div class="card bg-light text-dark h-100">
+                    <div class="card-body bg-light">
+                        <div class="rotate">
+                            <i class="fa fa-pen fa-3x"></i>
+                        </div>
+                        <h6 class="text-uppercase">Sign a diploma</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-xl-4 col-sm-6 py-2">
+            <a asp-action="ExamHistory" asp-controller="Home" style="text-decoration:none">
+                <div class="card text-dark bg-light h-100">
+                    <div class="card-body bg-light">
+                        <div class="rotate">
+                            <i class="fa fa-check-circle fa-3x"></i>
+                        </div>
+                        <h6 class="text-uppercase">Validate a diploma</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-xl-4 col-sm-6 py-2">
+            <a asp-action="Index" asp-controller="Documents" style="text-decoration:none">
+                <div class="card text-dark bg-light h-100">
+                    <div class="card-body bg-light">
+                        <div class="rotate">
+                            <i class="fa fa-history fa-3x"></i>
+                        </div>
+                        <h6 class="text-uppercase">See all diplomas</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

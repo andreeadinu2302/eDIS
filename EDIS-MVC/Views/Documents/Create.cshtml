@@ -1,0 +1,63 @@
+﻿@model EDIS_MVC.Models.Document
+
+@{
+    ViewData["Title"] = "Sign a diploma";
+}
+
+<div class="text-center">
+    <div class="">
+        <img src="~/logos/@ViewBag.organization.LogoName" class="img-fluid" height="100" width="100" alt="Organization logo">
+        <h1>Sign a diploma</h1>
+        <h4>This diploma will be committed to the blockchain network</h4>
+        <hr />
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DocumentType" class="control-label"></label>
+                <input asp-for="DocumentType" class="form-control" />
+                <span asp-validation-for="DocumentType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DocumentSerial" class="control-label"></label>
+                <input asp-for="DocumentSerial" class="form-control" />
+                <span asp-validation-for="DocumentSerial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Faculty" class="control-label"></label>
+                <input asp-for="Faculty" class="form-control" />
+                <span asp-validation-for="Faculty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HolderName" class="control-label"></label>
+                <input asp-for="HolderName" class="form-control" />
+                <span asp-validation-for="HolderName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LearningType" class="control-label"></label>
+                <input asp-for="LearningType" class="form-control" />
+                <span asp-validation-for="LearningType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Average" class="control-label"></label>
+                <input asp-for="Average" class="form-control" />
+                <span asp-validation-for="Average" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Sign" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

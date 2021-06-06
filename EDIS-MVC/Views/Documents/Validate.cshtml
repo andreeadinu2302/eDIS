@@ -1,0 +1,61 @@
+﻿<div class="text-center">
+
+    @if (ViewBag.signer == "The signer of this diploma was not recognized")
+    {
+        <h3 style="color:red">The signer of this diploma was not recognized</h3>
+        <hr />
+        <div class="form-group">
+            <h4 class="text-black-50"><i class=""></i>Holder's name: @ViewBag.asset.HolderName</h4>
+        </div>
+
+        <div class="form-group">
+            <h4 class="text-black-50"><i class=""></i>Diploma: @ViewBag.asset.Title</h4>
+        </div>
+
+        <div class="form-group">
+            <h4 class="text-black-50"><i class=""></i>Issue date: @ViewBag.asset.DateOfIssue</h4>
+        </div>
+    }
+    else
+    {
+        <img src="~/images/@ViewBag.signer.LogoName" class="responsive" height="150" width="150" />
+        <hr />
+
+        <div class="form-group">
+
+            <h4 class="text-black-50"><i class="fas fa-user-check"></i> @ViewBag.asset.HolderName</h4>
+
+        </div>
+
+        <div class="form-group">
+
+            <h4 class="text-black-50"><i class="fas fa-certificate"></i> @ViewBag.asset.Title</h4>
+
+        </div>
+
+        <div class="form-group">
+
+            <h4 class="text-black-50"><i class="fas fa-clock"></i> @ViewBag.asset.DateOfIssue</h4>
+
+        </div>
+
+        <br />
+
+        <div class="form-group">
+
+            <h6 style="color:forestgreen"><i class="fas fa-check-circle"></i> Signed and verified by the EDIS system</h6>
+
+        </div>
+    }
+</div>
+
+<style>
+    .responsive {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .text-color {
+        color: #004d99 !important;
+    }
+</style>

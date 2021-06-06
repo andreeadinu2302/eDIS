@@ -1,0 +1,31 @@
+﻿@model IEnumerable<EDIS_MVC.Models.Document>
+
+@{
+    ViewData["Title"] = "Signed diplomas";
+}
+
+<h1>Diplomas signed by @ViewBag.organization.Name</h1>
+
+<p>
+    <a asp-action="Create">Sign a new diploma</a>
+</p>
+
+@foreach (var diploma in Model)
+{
+    <div class="card">
+        <div class="row no-gutters">
+            <div class="col-auto">
+                
+            </div>
+            <div class="col">
+                <div class="card-block px-2">
+                    <h4 class="card-title">@diploma.HolderName</h4>
+                    <p class="card-text">@diploma.Faculty</p>
+                    <p class="card-text">@diploma.DocumentType</p>
+                    <p class="card-text">Transaction id: @diploma.TransactionId</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+}

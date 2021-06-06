@@ -1,0 +1,31 @@
+﻿@model IEnumerable<EDIS_MVC.Models.Organization>
+
+@{
+    ViewData["Title"] = "Enrolled organizations";
+}
+
+<h1>Enrolled organizations</h1>
+
+<p>
+    <a asp-action="Create">Add New</a>
+</p>
+
+@foreach (var organization in Model)
+{
+    <div class="card">
+        <div class="row no-gutters">
+            <div class="col-auto">
+                <img src="~/logos/@organization.LogoName" class="img-fluid" height="150" width="150" alt="Organization logo">
+            </div>
+            <div class="col">
+                <div class="card-block px-2">
+                    <h4 class="card-title">@organization.Name</h4>
+                    <p class="card-text">Transaction id: @organization.TransactionId</p>
+                    <p class="card-text">Admin account: admin@@@organization.Domain</p>
+                    @*<a asp-action="Details" asp-controller="Products" asp-route-id="@product.Id" class="btn btn-primary">Details</a>*@
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+}
